@@ -6,21 +6,24 @@ data = read.csv(
 
 times <- strptime(paste(data[,1],data[,2]), "%d/%m/%Y %H:%M")
 
-par(mfrow = c(1,1))
-par(cex = 0.75)
+par(mfrow = c(1,1), cex = 0.75, mar = c(2, 6, 2, 2))
+
 
 plot(
   times,
   data$Sub_metering_1, 
   type="n", 
   xlab="", 
-  ylab="Energi sub metering"
+  ylab="Energy sub metering"
 )
-points(times,data$Sub_metering_1, type="l")
+points(times,data$Sub_metering_1, type="l", col="black")
 points(times,data$Sub_metering_2, type="l", col="red")
 points(times,data$Sub_metering_3, type="l", col="blue")
 legend("topright", 
        pch="-",
+       lty = 1,
+       text.width = 40000,
+       cex = 0.9,
        col = c("black", "red","blue"), 
        legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3")
 )
