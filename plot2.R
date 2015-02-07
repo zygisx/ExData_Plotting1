@@ -4,6 +4,7 @@ data = read.csv(
   sep=";",
   quote="", colClasses=c("character", "character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
 
+par(mar = c(2, 6, 2, 2))
 
 plot(
   strptime(paste(data[,1],data[,2]), "%d/%m/%Y %H:%M"),
