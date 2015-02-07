@@ -4,6 +4,8 @@ data = read.csv(
   sep=";",
   quote="", colClasses=c("character", "character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
 
+par(mar = c(6, 6, 2, 2))
+
 hist(
   data$Global_active_power, 
   col="red", 
